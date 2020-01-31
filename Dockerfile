@@ -1,5 +1,5 @@
 # My first docker file.
- FROM node:latest
+ FROM node:11-alpine
  MAINTAINER Shubham Kumar (XXXXXX@gmail.com)
 
  # RUN commands inside BASE IMAGE
@@ -8,7 +8,7 @@ RUN apk add --no-cache git
 RUN apk add --no-cache openssh
 
 #CLONE git repo inside BASE IMAGE
-RUN git clone https://github.com/shubham0109/docker-demo.git/myapp/
+RUN git clone https://github.com/shubham0109/docker-demo.git /myapp/
 
 #COPY cloned repo inside BASE IMAGE to another directory at BASE IMAGE
 RUN cp -R /myapp/* /var/www
